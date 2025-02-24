@@ -1,0 +1,93 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "🔧 Install Bookshop Dependencies",
+            "type": "shell",
+            "command": "npm install",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": [],
+            "detail": "Installs the required dependencies for Bookshop."
+        },
+        {
+            "label": "📦 Install Jekyll Dependencies",
+            "type": "shell",
+            "command": "npm run jekyll:install",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": [],
+            "detail": "Installs Jekyll dependencies using Bundler."
+        },
+        {
+            "label": "🚀 Run Jekyll Server",
+            "type": "shell",
+            "command": "npm start",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "isBackground": true,
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": [],
+            "detail": "Runs Jekyll with live-reloading."
+        },
+        {
+            "label": "🏗️ Build Jekyll Site",
+            "type": "shell",
+            "command": "npm run build",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": [],
+            "detail": "Builds the static site using Jekyll."
+        },
+        {
+            "label": "🧹 Clean Jekyll Cache",
+            "type": "shell",
+            "command": "npm run jekyll:clean",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": [],
+            "detail": "Removes cached files to force a clean rebuild."
+        },
+        {
+            "label": "🩺 Check Jekyll Site Health",
+            "type": "shell",
+            "command": "npm run jekyll:doctor",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": [],
+            "detail": "Checks the Jekyll setup for potential issues."
+        }
+    ]
+}

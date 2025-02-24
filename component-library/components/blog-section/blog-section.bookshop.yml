@@ -13,7 +13,7 @@ blueprint:
   title: ""
   description_html: ""
   link_url: ""
-  show_posts: true
+  show_posts: false
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
