@@ -18,16 +18,25 @@ jobs:
         with:
           ruby-version: '3.3' # Ensure this matches the Ruby version in your Dockerfile
 
+      - name: Navigate to site directory
+        working-directory: ./site
+        run: echo "Moved to site directory"
+
       - name: Install dependencies
+        working-directory: ./site
         run: |
           gem install bundler
           bundle install
 
       - name: Build the Jekyll site
+        working-directory: ./site
         run: bundle exec jekyll build
+
+      - name: Add CNAME file to build output
+        run: echo 'andrew.style' > ./site/_site/CNAME
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+          publish_dir: ./site/_site
